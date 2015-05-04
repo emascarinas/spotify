@@ -5,10 +5,11 @@ angular.module('spotifyApp')
             this.redirect = function (url) {
                 $window.location.replace(url);
             };
-            this.buildParam = function (param){
-                return $.param(param);
-            }
-            this.isAuthenticated = function(){
-                return undefined !== session.getProfile() && undefined !== session.getCode;
-            }
+            this.buildParam = function (param) {
+                return $.param(param); // jshint ignore:line
+            };
+            this.isEmptyToken = function () {
+                return undefined === session.getAccessToken() && undefined !== session.getCode();
+            };
+           
         });

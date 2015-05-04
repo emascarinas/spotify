@@ -15,7 +15,10 @@ angular
             'ngResource',
             'ngRoute',
             'ngSanitize',
-            'ngTouch'
+            'ngTouch',
+            'angular-loading-bar',
+            'checklist-model',
+            'mgcrea.ngStrap'
         ])
         .constant('config', {
             clientId: '84239147f2e54cfca600f89fade24f71',
@@ -25,6 +28,8 @@ angular
             accountUrl: 'https://accounts.spotify.com',
             authorizeEnd: '/authorize',
             tokenEnd: '/api/token',
+            apiUrl: 'https://api.spotify.com/v1',
+            searchEnd: '/search',
             curlUrl: 'http://dunggoanan.com/curlspo.php'
         })
         .config(function ($routeProvider) {
@@ -36,6 +41,14 @@ angular
                     .when('/login', {
                         templateUrl: 'views/about.html',
                         controller: 'LoginCtrl'
+                    })
+                    .when('/search', {
+                        templateUrl: 'views/search.html',
+                        controller: 'SearchCtrl'
+                    })
+                    .when('/playlist', {
+                        templateUrl: 'views/playlist.html',
+                        controller: 'PlaylistCtrl'
                     })
                     .otherwise({
                         redirectTo: '/'

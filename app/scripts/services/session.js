@@ -22,5 +22,5 @@ angular.module('spotifyApp')
           setAccessToken: function(value) {
               accessToken = value;
           }
-      }
+      };
   });

@@ -11,14 +11,16 @@ angular.module('spotifyApp')
         .controller('MainCtrl', function (session, $location, util, user) {
             var re = new RegExp('code=(.*)#\/');
             var code = $location.absUrl().match(re);
-            if(!util.isAuthenticated()) {
+            if(undefined === session.getCode() && null !== code){
+                session.setCode(code);
+            }
+            if(util.isEmptyToken()) {
                 session.setCode(code[1]);
                 user.getAccessToken().success(function(data){
-                    session.setAccessToken(data.access_token);
+                    session.setAccessToken(data.access_token); // jshint ignore:line
                     console.log(session.getAccessToken());
                 }).error(function(data){
                     console.log(data);
                 });
-                console.log(session.getCode());
             }
         });
