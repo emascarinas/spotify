@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spotifyApp')
-        .service('util', function Util($window, session) {
+        .service('util', function Util($window, session, $modal) {
             this.redirect = function (url) {
                 $window.location.replace(url);
             };
@@ -11,5 +11,17 @@ angular.module('spotifyApp')
             this.isEmptyToken = function () {
                 return undefined === session.getAccessToken() && undefined !== session.getCode();
             };
-           
+            this.showError = function (err) {
+                $modal.open({
+                    templateUrl: 'erroModal.html',
+                    controller: 'ModalInstanceCtrl',
+                    size: 'sm',
+                    resolve: {
+                        error: function () {
+                            return err;
+                        }
+                    }
+                });
+            };
+
         });

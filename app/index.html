@@ -68,15 +68,7 @@
             </script>
         </div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
-
-        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" n aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                   {{modalMessage}}
-                </div>
-            </div>
-        </div>
+        
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
         <script>
             (function (i, s, o, g, r, a, m) {
@@ -114,8 +106,7 @@
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
         <script src="bower_components/checklist-model/checklist-model.js"></script>
-        <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
-        <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -127,9 +118,11 @@
         <script src="scripts/services/util.js"></script>
         <script src="scripts/services/session.js"></script>
         <script src="scripts/services/song.js"></script>
+        <script src="scripts/controllers/modal.js"></script>                
         <script src="scripts/controllers/search.js"></script>
         <script src="scripts/controllers/playlist.js"></script>
         <script src="scripts/controllers/common.js"></script>
+        <script src="scripts/services/localstorage.js"></script>
         <!-- endbuild -->
     </body>
 </html>

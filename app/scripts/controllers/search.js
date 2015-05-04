@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spotifyApp')
-        .controller('SearchCtrl', function ($scope, song, $routeParams, $modal) {
+        .controller('SearchCtrl', function ($scope, song, $routeParams, localStorage, util) {
             $scope.songs = {selected: []};
             song.search($routeParams.query).success(function (data) {
                 $scope.response = data;
@@ -16,10 +16,18 @@ angular.module('spotifyApp')
                 $scope.songs.selected = [];
             };
             $scope.addPlaylist = function () {
-                var myModal = $modal({title: 'My Title', content: 'My Content', show: true});
-
-            
+                console.log($scope.playlistName);
+                if (!$scope.playlistName) {
+                    util.showError({error_name: 'Error', error_message: 'Playlist name required.'});
+                }
+                else {
+                    var playlist = {
+                        name: $scope.playlistName,
+                        songs: $scope.songs.selected
+                    }
+                    localStorage.setPlaylist(playlist);
+                }
             };
-            
-            
+
+
         });
