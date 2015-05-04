@@ -19,7 +19,8 @@ angular
             'angular-loading-bar',
             'checklist-model',
             'ui.bootstrap',
-            'ui.sortable'
+            'ui.sortable',
+            'angucomplete-alt'
         ])
         .constant('config', {
             clientId: '84239147f2e54cfca600f89fade24f71',

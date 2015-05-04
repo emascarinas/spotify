@@ -7,12 +7,14 @@ angular.module('spotifyApp')
                 localStorage.setData([]);
                 $scope.songs = localStorage.getData();
             };
-            
-            
             $scope.sortableOptions = {
                 stop: function (e, ui) {
                     localStorage.setPlaylist($scope.songs);
                 }
+            };
+            $scope.remove = function(song){
+                var index = $scope.songs.indexOf(song);
+                $scope.songs.splice(index,1);
             };
 
         });
