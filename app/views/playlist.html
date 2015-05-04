@@ -1,8 +1,25 @@
 <h2>Playlist Page</h2>
-<button class="btn btn-info" ng-click="clear()">Clear Playlist</button>
-<div ng-repeat="playlist in playlists">
-    {{playlist.name}}
-    <div ng-repeat="song in playlist.songs">
-        {{song.name}}
-    </div>
+<button class="btn btn-info" ng-click="clear()">Clear Songs</button>
+<!--<div ng-repeat="song in songs">
+    {{song.name}}
 </div>
+-->
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Song</th>
+            <th>Artist</th>
+            <th>Duration</th>
+            <th>Popularity</th>
+        </tr>
+    </thead>
+    <tbody class="list" ui-sortable="sortableOptions" ng-model="songs">
+        <tr ng-repeat="data in songs" class="item">
+            <td>{{data.name}}</td>
+            <td>{{data.artists[0].name}}</td>
+            <td>{{data.duration_ms}}</td>
+            <td>{{data.popularity}}</td>
+        </tr>
+    </tbody>
+</table>

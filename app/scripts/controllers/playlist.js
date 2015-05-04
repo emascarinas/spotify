@@ -2,10 +2,18 @@
 
 angular.module('spotifyApp')
         .controller('PlaylistCtrl', function ($scope, localStorage) {
-            $scope.playlists = localStorage.getData();
-            $scope.clear = function(){
-                localStorage.clear();
-                $scope.playlists = localStorage.getData();
+            $scope.songs = localStorage.getData();
+            $scope.clear = function () {
+                localStorage.setData([]);
+                $scope.songs = localStorage.getData();
             };
+            
+            
+            $scope.sortableOptions = {
+                stop: function (e, ui) {
+                    localStorage.setPlaylist($scope.songs);
+                }
+            };
+
         });
-        
+
