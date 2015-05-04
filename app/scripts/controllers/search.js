@@ -1,11 +1,10 @@
 'use strict';
 
 angular.module('spotifyApp')
-        .controller('SearchCtrl', function ($scope, song, $routeParams, localStorage, util) {
+        .controller('SearchCtrl', function ($scope, song, $routeParams, localStorage, util, $location) {
             $scope.songs = {selected: []};
             song.search($routeParams.query).success(function (data) {
                 $scope.response = data;
-                console.log(data);
             }).error(function (data) {
                 console.log(data);
             });
@@ -16,16 +15,19 @@ angular.module('spotifyApp')
                 $scope.songs.selected = [];
             };
             $scope.addPlaylist = function () {
-                console.log($scope.playlistName);
                 if (!$scope.playlistName) {
-                    util.showError({error_name: 'Error', error_message: 'Playlist name required.'});
+                    util.showError({error_name: 'Error', error_message: 'Playlist name required.'}); // jshint ignore:line
+                }
+                else if(!$scope.songs.selected.length) {
+                    util.showError({error_name: 'Error', error_message: 'Select a song'}); // jshint ignore:line
                 }
                 else {
                     var playlist = {
                         name: $scope.playlistName,
                         songs: $scope.songs.selected
-                    }
+                    };
                     localStorage.setPlaylist(playlist);
+                    $location.path('playlist');
                 }
             };
 

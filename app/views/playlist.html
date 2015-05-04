@@ -1,1 +1,8 @@
-<p>This is the playlist view.</p>
+<h2>Playlist Page</h2>
+<button class="btn btn-info" ng-click="clear()">Clear Playlist</button>
+<div ng-repeat="playlist in playlists">
+    {{playlist.name}}
+    <div ng-repeat="song in playlist.songs">
+        {{song.name}}
+    </div>
+</div>
