@@ -19,14 +19,14 @@ angular.module('spotifyApp')
             };
             $scope.sortableOptions = {
                 stop: function () {
-                    localStorage.setPlaylist($scope.songs);
+                    localStorage.setData($scope.songs);
                 }
             };
             $scope.remove = function (song) {
                 var index = $scope.songs.indexOf(song);
                 $scope.songs.splice(index, 1);
                 computeTotal();
-                localStorage.setPlaylist($scope.songs);
+                localStorage.setData($scope.songs);
             };
 
 

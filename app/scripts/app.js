@@ -22,7 +22,10 @@ angular
             accountUrl: 'https://accounts.spotify.com',
             authorizeEnd: '/authorize',
             tokenEnd: '/api/token',
+            itemsPerPage: 20,
+            pageMaxSize: 5, //for navigator number of page number shown            
             apiUrl: 'https://api.spotify.com/v1',
+            meEnd: '/me',
             searchEnd: '/search',
             curlUrl: 'http://dunggoanan.com/curlspo.php'
         })

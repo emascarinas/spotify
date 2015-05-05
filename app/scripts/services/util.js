@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spotifyApp')
-        .service('util', function Util($window, session, $modal) {
+        .service('util', function Util($window, session, $modal, config) {
             this.redirect = function (url) {
                 $window.location.replace(url);
             };
@@ -23,5 +23,11 @@ angular.module('spotifyApp')
                     }
                 });
             };
-
+            this.computeOffset = function (page) {
+                if (page === 1) {
+                    return 0;
+                } else {
+                    return (page-1) * config.itemsPerPage;
+                }
+            };
         });
