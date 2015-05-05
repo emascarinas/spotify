@@ -6,7 +6,7 @@
         <tr>
             <th>Song</th>
             <th>Artist</th>
-            <th>Duration</th>
+            <th>Duration <span ng-show="total">({{total | minutes}})</span></th>
             <th>Popularity</th>
             <th>Action</th>
         </tr>
@@ -15,9 +15,13 @@
         <tr ng-repeat="data in songs" class="item">
             <td>{{data.name}}</td>
             <td>{{data.artists[0].name}}</td>
-            <td>{{data.duration_ms}}</td>
+            <td>{{data.duration_ms | minutes}}</td>
             <td>{{data.popularity}}</td>
             <td><button class="btn btn-danger" ng-click="remove(data)">Remove</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="3"><strong ng-show="total">{{total | minutes}}</strong></td>
         </tr>
     </tbody>
 </table>
