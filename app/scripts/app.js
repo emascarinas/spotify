@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name spotifyApp
- * @description
- * # spotifyApp
- *
- * Main module of the application.
- */
 angular
         .module('spotifyApp', [
             'ngAnimate',

@@ -1,3 +1,22 @@
+<form id="form-search" ng-submit="goSearch()">
+    <div class="form-group">
+        <div angucomplete-alt id="ex4" 
+             placeholder="Search Songs" 
+             pause="500" 
+             selected-object="selectedSong" 
+             remote-url="https://api.spotify.com/v1/search" 
+             remote-url-request-formatter="remoteUrlRequestFn" 
+             remote-url-data-field="tracks.items" 
+             title-field="name" 
+             minlength="1" 
+             input-class="form-control form-control-small" 
+             match-class="highlight"
+             input-changed="inputChanged">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Search</button>
+</form>   
+
 <h2>Search Page</h2>
 <div class="row">
     <div class="col-md-6">
@@ -21,7 +40,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="data in response.tracks.items">
+        <tr ng-repeat="data in songList">
             <td><input type="checkbox" checklist-model="songs.selected" checklist-value="data"> {{data.name}}</td>
             <td>{{data.artists[0].name}}</td>
             <td>{{data.duration_ms}}</td>

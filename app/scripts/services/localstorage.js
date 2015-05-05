@@ -12,7 +12,6 @@ angular.module('spotifyApp')
                 return JSON.parse(localStorage.getItem('data'));
             };
             this.setData = function (data) {
-
                 return localStorage.setItem('data', JSON.stringify(data));
             };
             this.setPlaylist = function (playlist) {

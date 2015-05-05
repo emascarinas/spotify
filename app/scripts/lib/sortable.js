@@ -1,3 +1,5 @@
+'use strict';
+
 /*
  jQuery UI Sortable plugin wrapper
 
