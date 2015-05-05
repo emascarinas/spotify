@@ -8,6 +8,7 @@
             <th>Artist</th>
             <th>Duration <span ng-show="total">({{total | minutes}})</span></th>
             <th>Popularity</th>
+            <th>Coolness</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -17,6 +18,7 @@
             <td>{{data.artists[0].name}}</td>
             <td>{{data.duration_ms | minutes}}</td>
             <td>{{data.popularity}}</td>
+            <td>{{((data.duration_ms * data.popularity) / total) | number : 1}}</td>
             <td><button class="btn btn-danger" ng-click="remove(data)">Remove</button></td>
         </tr>
         <tr>
