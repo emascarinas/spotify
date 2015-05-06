@@ -6,6 +6,9 @@ module.exports = function () {
     browser.addMockModule('mockedData', mockedData);
     var self = this;
 
+	this.gotoHomePage = function () {
+        browser.get('/#/');
+    };
     this.getMockedData = function (value) {
         return browser.executeScript('return angular.injector(["mockedData"]).get("' + value + '")');
     };

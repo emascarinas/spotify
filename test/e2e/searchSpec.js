@@ -3,24 +3,22 @@ var Common = require('../e2e/commonPage.js');
 var Search = require('../e2e/searchPage.js');
 
 describe('searchSpec', function () {
-    var common, searchPage;
+    var common, searchPage, mockModule;
     beforeEach(function () {
         common = new Common();
         searchPage = new Search();
     });
-
-    it('should go to home page', function () {
-		common.assertTextByCss('body > div.container > div > div.jumbotron.ng-scope > h1','Playlytics');
-    });
-    it('should go to search page', function () {
-		searchPage.clickSearch();
-		common.assertTextByCss('body > div.container > div > h2','Search Page');
-    });
-    it('should show list for query "a" ', function () {
+	it('should show list for query "a" ', function () {
+		searchPage.mockSearch();
+		common.gotoHomePage();
 		searchPage.clickSearch();
 		searchPage.fillSearchInput('a');
 		searchPage.clickSearchButton();
-		browser.pause();
+		var elem = element(by.css('body > div.container > div > div.jumbotron.ng-scope > h1'));
+        expect(elem.getText()).toBe('sdf');
     });
-
+	
+    
+	
+	
 });

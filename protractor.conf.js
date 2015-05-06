@@ -24,11 +24,12 @@ exports.config = {
         isVerbose: true,
         showColors: true,
         includeStackTrace: true,
-        defaultTimeoutInterval: 30000
+        defaultTimeoutInterval: 6000
     },
-    allScriptsTimeout: 10000,
+    allScriptsTimeout: 4000,
+	baseUrl: 'http://localhost:9000/',
     onPrepare: function() {
-        browser.driver.manage().window().maximize();
-		browser.driver.get('http://localhost:9000/');
+        //browser.driver.manage().window().maximize();
+		//browser.driver.get('http://localhost:9000/');
     }
 };
