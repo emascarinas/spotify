@@ -17,7 +17,7 @@ angular
         .constant('config', {
             clientId: '84239147f2e54cfca600f89fade24f71',
             clientSecret: 'f67c24958fa24a709bafe4868e7bad72',
-            redirectUri: 'http://localhost:9000/#/',
+            redirectUri: 'http://emascarinas.github.io/spotify/#/',
             scopes: 'user-read-private user-read-email',
             accountUrl: 'https://accounts.spotify.com',
             authorizeEnd: '/authorize',
