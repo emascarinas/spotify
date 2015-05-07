@@ -1,1 +1,1 @@
-# spotify [![Coverage Status](https://coveralls.io/repos/emascarinas/spotify/badge.svg)](https://coveralls.io/r/emascarinas/spotify)
+# spotify [![Build Status](https://travis-ci.org/emascarinas/spotify.svg?branch=master)](https://travis-ci.org/emascarinas/spotify) [![Coverage Status](https://coveralls.io/repos/emascarinas/spotify/badge.svg)](https://coveralls.io/r/emascarinas/spotify)
