@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('spotifyApp')
-        .controller('SearchCtrl', function ($scope, song, localStorage, util, $location, config, session) {
+        .controller('SearchCtrl', function ($scope, song, localStorage, util, $location, config) {
             $scope.songs = {selected: []};
             $scope.songList = [];
             $scope.checkAll = function () {
