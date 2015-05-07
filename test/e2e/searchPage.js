@@ -18,7 +18,6 @@ var Search = function () {
         common.clickByCss('#form-search > button');
     };
     this.mockSearch = function () {
-		console.log('aaaa');
         var httpBackendMock = function () {
             angular.module('httpBackendMock', ['ngMockE2E'])
                     .run(
@@ -31,5 +30,4 @@ var Search = function () {
         browser.addMockModule('httpBackendMock', httpBackendMock);
     };
 };
-
 module.exports = Search;

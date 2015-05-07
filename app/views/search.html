@@ -41,7 +41,7 @@
     </thead>
     <tbody>
         <tr ng-repeat="data in songList">
-            <td><input type="checkbox" checklist-model="songs.selected" checklist-value="data"> {{data.name}}</td>
+            <td><input type="checkbox" checklist-model="songs.selected" checklist-value="data"> <span class="song-name">{{data.name}}</span></td>
             <td>{{data.artists[0].name}}</td>
             <td>{{data.duration_ms | minutes }}</td>
             <td>{{data.popularity}}</td>
