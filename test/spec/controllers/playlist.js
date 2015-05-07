@@ -1,22 +1,17 @@
 'use strict';
 
 describe('Controller: PlaylistCtrl', function () {
-
-  // load the controller's module
-  beforeEach(module('spotifyApp'));
-
-  var PlaylistCtrl,
-    scope;
-
-  // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
-    scope = $rootScope.$new();
-    PlaylistCtrl = $controller('PlaylistCtrl', {
-      $scope: scope
+	var controller;
+    beforeEachShared();
+    beforeEach(function () {
+        controller = function () {
+            return $controller('PlaylistCtrl', {'$scope': $rootScope});
+        };
     });
-  }));
+    //afterEachShared();
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
-  });
+    it('should register successfully', inject(function () {
+        controller();
+        $httpBackend.flush();
+    }));
 });

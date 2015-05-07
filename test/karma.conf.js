@@ -25,16 +25,32 @@ module.exports = function(config) {
       'bower_components/angular-resource/angular-resource.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-touch/angular-touch.js',
+      'bower_components/angular-touch/angular-touch.js',	  
+	  'bower_components/angular-loading-bar/build/loading-bar.js',
+	  'bower_components/checklist-model/checklist-model.js',
+	  'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',	  
+	  'bower_components/jquery/dist/jquery.js',
+	  'bower_components/jquery-ui/jquery-ui.js',
+	  'bower_components/angucomplete-alt/angucomplete-alt.js',
+	  
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
+      'test/mock/mockedDataUnit.js',
+	  'test/spec/helper.js',
       'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
     exclude: [
     ],
-
+	preprocessors: {
+		'app/scripts/**/*.js': ['coverage']
+    },	
+	coverageReporter: {
+            type: 'html',
+            dir: 'coverage',
+            subdir: '.'
+	},
+	reporters: ['progress','coverage'],
     // web server port
     port: 8080,
 
@@ -53,7 +69,8 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+	  'karma-coverage'
     ],
 
     // Continuous Integration mode
