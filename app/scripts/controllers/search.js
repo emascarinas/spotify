@@ -2,8 +2,6 @@
 
 angular.module('spotifyApp')
         .controller('SearchCtrl', function ($scope, song, localStorage, util, $location, config, session) {
-            console.log(session.getProfile());
-            var query;
             $scope.songs = {selected: []};
             $scope.songList = [];
             $scope.checkAll = function () {
@@ -30,22 +28,22 @@ angular.module('spotifyApp')
                 $scope.songList = [song.originalObject];
             };
             $scope.goSearch = function () {
-                query = $scope.songList.length === 1 ? $scope.songList[0].name : query;
-                if (undefined !== query && query.length) {
-                    fetch(query,util.computeOffset($scope.currentPage),config.itemsPerPage);
+                $scope.query = $scope.songList.length === 1 ? $scope.songList[0].name : $scope.query;
+                if (undefined !== $scope.query && $scope.query.length) {
+                    fetch($scope.query,util.computeOffset($scope.currentPage),config.itemsPerPage);
                 } else {
                     util.showError({errorName: 'Error', errorMessage: 'Search value required'});
                 }
             };
             $scope.pageChanged = function () {
                 
-                fetch(query,util.computeOffset($scope.currentPage),config.itemsPerPage);
+                fetch($scope.query,util.computeOffset($scope.currentPage),config.itemsPerPage);
             };
             $scope.inputChanged = function (str) {
                 $scope.songList = [];
                 $scope.currentPage = 1;
                 $scope.totalItems = 0;
-                query = str;
+                $scope.query = str;
             };
             function fetch(str,offset,limit) {
                 song.search(str,offset,limit).success(function (data) {
