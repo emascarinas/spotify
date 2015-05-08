@@ -19,6 +19,7 @@ In-depth analytics and reporting capabilities on your favorite playlists using S
 * Sass
 
 ### Added features:
+* Login to show user profile with image if available. Making use of access token.
 * Drag and drop on re ordering songs
 * Fully responsive layout
 * Loading indicator
