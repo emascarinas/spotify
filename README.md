@@ -19,14 +19,24 @@ In-depth analytics and reporting capabilities on your favorite playlists using S
 * Sass
 
 ### Added features:
-* Fully responsive layout
 * Drag and drop on re ordering songs
+* Fully responsive layout
 * Loading indicator
 * Global error handler
 * Paginator
 * unit test using karma test runner and jasmine with istanbul as code coverage. Using mock data sets.
+  * $ grunt test 
 * end to end test using protractor and jasmine. Using mock data sets including assert values.
+  * $ webdriver-manager start
+  * $ grunt serve
+  * $ protractor
 * travis ci and coverall - only had intial test running, will add more soon. Click on badges above to see details.
-  > https://travis-ci.org/emascarinas/spotify
-  > https://coveralls.io/r/emascarinas/spotify
-* grunt build system, npm/bower 
+  * https://travis-ci.org/emascarinas/spotify
+  * https://coveralls.io/r/emascarinas/spotify
+* grunt build system, npm/bower
+  * $ grunt (will create 'dist' folder)
+
+
+
+
+
