@@ -4,6 +4,7 @@ Live site: http://emascarinas.github.io/spotify/
 
 ### About the site
 In-depth analytics and reporting capabilities on your favorite playlists using Spotify’s Web API.
+* https://developer.spotify.com/web-api/
 
 #### App Features:
 * Allows users to search - with auto-completion.
