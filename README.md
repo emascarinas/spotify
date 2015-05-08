@@ -27,5 +27,6 @@ In-depth analytics and reporting capabilities on your favorite playlists using S
 * unit test using karma test runner and jasmine with istanbul as code coverage. Using mock data sets.
 * end to end test using protractor and jasmine. Using mock data sets including assert values.
 * travis ci and coverall - only had intial test running, will add more soon. Click on badges above to see details.
-* * https://travis-ci.org/emascarinas/spotify
+>> https://travis-ci.org/emascarinas/spotify
+>> https://coveralls.io/r/emascarinas/spotify
 * grunt build system, npm/bower 
